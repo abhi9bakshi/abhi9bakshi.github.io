@@ -73,6 +73,27 @@
 		$("#css-playground > .mask").on('click', function(){
 			location.href='http://www.abhi9bakshi.com/css-playground';
 		});
+
+		
+		$("#js-playground > .mask").hover(
+			function(){
+				$("#js-playground > img").addClass("js-anim");
+			},
+			function(){
+				$("#js-playground > img").removeClass("js-anim");
+			}
+		);
+
+		$("#css-playground > .mask").hover(
+			function(){
+				$("#css-playground > img").addClass("css-anim");
+			},
+			function(){
+				$("#css-playground > img").removeClass("css-anim");
+			}
+		);
+
+
 	})
 </script>
 </html>

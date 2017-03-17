@@ -144,6 +144,12 @@ header h2:hover{
 		left: 30px;
 	}
 }
+#js-playground > .mask,  #css-playground > .mask{
+	width: 100%;
+	height: 100%;
+	position: absolute;
+	top: 0;
+}
 
 /* Transitions */
 #js-playground img, #css-playground img{
@@ -153,16 +159,28 @@ header h2:hover{
 	transition: width 500ms ease, height 500ms ease;
 }
 
-#js-playground > .mask,  #css-playground > .mask{
-	width: 100%;
-	height: 100%;
-	position: absolute;
-	top: 0;
+/* Animations */
+.js-anim{
+	animation: js-anim 2s infinite;
+}
+
+.css-anim{
+	animation: css-anim 2s infinite;	
+}
+
+@keyframes js-anim {
+    0%   {top: 30px;}
+    50%  {top: 35px;}
+    100% {top: 30px;}
+}
+
+@keyframes css-anim {
+    0%   {bottom: 30px;}
+    50%  {bottom: 35px;}
+    100% {bottom: 30px;}
 }
 
 /* JS playground */
-
-
 #js-playground > .mask{
 	-webkit-transition: background-color 500ms ease;
 	-moz-transition: background-color 500ms ease;
