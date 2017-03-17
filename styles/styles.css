@@ -81,7 +81,7 @@ header h2:hover{
 	z-index: -1;
 	position: absolute;
 	top: 2.5rem;
-	background: #888 url("media/images/playground.jpg") no-repeat center center;
+	background: #888 url("../media/images/playground.jpg") no-repeat center center;
 	background-size: 100%;
 	width: 100%;
 	height: calc(100% - 5.5rem);
