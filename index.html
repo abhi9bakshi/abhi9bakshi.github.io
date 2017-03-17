@@ -1,1 +1,76 @@
-"Hello World"
+<!doctype html>
+<html lang="en">
+
+<head>
+<meta charset="utf-8">
+
+<!-- Custom Font -->
+ <link href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet"> 
+
+<!-- jQuery -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.0/jquery.min.js" integrity="sha256-JAW99MJVpJBGcbzEuXk4Az05s/XyDdBomFqNlM3ic+I=" crossorigin="anonymous"></script>
+
+<!-- Modernizr -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.3/modernizr.min.js" integrity="sha256-0rguYS0qgS6L4qVzANq4kjxPLtvnp5nn2nB5G1lWRv4=" crossorigin="anonymous"></script>
+
+<!-- Font Awesome -->
+<link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+
+<!-- Custom Styles -->
+<link rel="stylesheet" href="styles/styles.css">
+</head>
+
+<body>
+<header>
+	<h2>Abhinav Bakshi</h2>
+</header>
+
+<section id="playground">
+	<div class="mask"></div>
+
+	<section id="js-playground">
+		<img src="media/images/js_logo.png" alt="JS Playground"> 
+		<p>JS<br/>Playground</p>
+		<div class="mask"></div>
+	</section>
+
+	<section id="css-playground">
+		<p>CSS<br/>Playground</p>
+		<img src="media/images/css_logo.png" alt="CSS Playground"> 
+		<div class="mask"></div>
+	</section>
+</section>
+
+<footer>
+	<ul>
+		<li>
+			<a href="https://www.linkedin.com/in/abhi9bakshi" class="social-links">
+			    <i class="fa fa-linkedin-square" aria-hidden="true"></i>
+			</a>
+		</li>
+		<li>
+			<a href="https://www.facebook.com/abhi9bakshi" class="social-links">
+			    <i class="fa fa-facebook-square" aria-hidden="true"></i>
+			</a>
+		</li>
+		<li>
+			<a href="https://twitter.com/abhi9bakshi" class="social-links">
+			    <i class="fa fa-twitter-square" aria-hidden="true"></i>
+			</a>
+		</li>
+	</ul>
+</footer>
+</body>
+
+<script>
+	$(document).ready(function(){
+		$("#js-playground > .mask").on('click', function(){
+			location.href='http://www.abhi9bakshi.com/js-playground';
+		});
+
+		$("#css-playground > .mask").on('click', function(){
+			location.href='http://www.abhi9bakshi.com/css-playground';
+		});
+	})
+</script>
+</html>

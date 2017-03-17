@@ -1,0 +1,308 @@
+/******************* CSS Reset *******************/
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+body {
+	line-height: 1;
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
+
+/***************** Global Styles *****************/
+html *{
+    font-family: 'Raleway', sans-serif;
+}
+
+
+/***************** Header Styles *****************/
+header{
+	position: absolute;
+	top: 0;
+	width: 100%;
+	background-color: #111;
+	-webkit-box-shadow: 0px 0px 8px 2px #000000;
+    -moz-box-shadow: 0px 0px 8px 2px #000000;
+    box-shadow: 0px 0px 8px 2px #000000;
+}
+
+header h2{
+	margin: 0 auto;
+	width: 10rem;
+	text-align: center;
+	font-size: 1rem;
+	line-height: 2.5rem;
+	color: #eee;
+}
+
+header h2:hover{
+	color: #fff;
+	cursor: pointer;
+}
+
+/*********** Playground Section Styles ***********/
+
+/* Parent Playground */
+#playground{
+	z-index: -1;
+	position: absolute;
+	top: 2.5rem;
+	background: #888 url("media/images/playground.jpg") no-repeat center center;
+	background-size: 100%;
+	width: 100%;
+	height: calc(100% - 5.5rem);
+}
+
+#playground > .mask{
+	z-index: 1;
+	background-color: rgba(0,0,0,0.7);
+	width: 100%;
+	height: 100%;
+}
+
+
+/* Child Playgrounds */
+@media(min-width: 50.001rem){
+	#js-playground, #css-playground{
+		position: absolute;
+		top: 0;
+		width: 50%;
+		height: 100%;
+		font-size: 4rem;
+		color: #eee;
+	}
+
+	#js-playground{
+		left: 0;
+		border-right: 2px solid #111;
+	}
+
+	#css-playground{
+		right: 0;
+	}	
+
+	#css-playground img{
+		width: 160px;
+		height: 160px;
+		position: absolute;
+		bottom: 30px;
+		right: 30px;
+	}
+
+	#css-playground p{
+		position: absolute;
+		text-align: right;
+		top: 30px;
+		right: 30px;
+	}
+
+	#js-playground img{
+		width: 160px;
+		height: 160px;
+		position: absolute;
+		top: 30px;
+		left: 30px;
+	}
+
+	#js-playground p{
+		position: absolute;
+		bottom: 30px;
+		left: 30px;
+	}
+}
+
+/* Transitions */
+#js-playground img, #css-playground img{
+	-webkit-transition: width 500ms ease, height 500ms ease;
+	-moz-transition: width 500ms ease, height 500ms ease;
+	-o-transition: width 500ms ease, height 500ms ease;
+	transition: width 500ms ease, height 500ms ease;
+}
+
+#js-playground > .mask,  #css-playground > .mask{
+	width: 100%;
+	height: 100%;
+	position: absolute;
+	top: 0;
+}
+
+/* JS playground */
+
+
+#js-playground > .mask{
+	-webkit-transition: background-color 500ms ease;
+	-moz-transition: background-color 500ms ease;
+	-o-transition: background-color 500ms ease;
+	transition: background-color 500ms ease;
+}
+
+#js-playground > .mask:hover{
+	background-color: rgba(247, 223, 30, 0.1);
+	cursor: pointer;
+}
+
+/* CSS Playground*/
+#css-playground > .mask{
+	-webkit-transition: background-color 500ms ease;
+	-moz-transition: background-color 500ms ease;
+	-o-transition: background-color 500ms ease;
+	transition: background-color 500ms ease;
+}
+
+#css-playground > .mask:hover{
+	background-color: rgba(59, 154, 219, 0.1);
+	cursor: pointer;
+}
+
+
+
+@media(max-width: 50rem){
+	/* Child Playgrounds */
+	#js-playground, #css-playground{
+		position: absolute;
+		left: 0;
+		width: 100%;
+		height: 50%;
+		font-size: 2rem;
+		color: #eee;
+	}
+
+	/* JS playground */
+	#js-playground{
+		top: 0;
+		border-bottom: 2px solid #111;
+	}
+
+	#js-playground img{
+		width: 80px;
+		height: 80px;
+		position: absolute;
+		top: 30px;
+		left: 30px;
+	}
+
+	#js-playground p{
+		position: absolute;
+		top: 48px;
+		left: 150px;
+	}
+
+	#js-playground > .mask{
+		-webkit-transition: background-color 500ms ease;
+		-moz-transition: background-color 500ms ease;
+		-o-transition: background-color 500ms ease;
+		transition: background-color 500ms ease;
+	}
+
+	#js-playground > .mask:hover{
+		background-color: rgba(247, 223, 30, 0.1);
+		cursor: pointer;
+	}
+
+	/* CSS Playground*/
+	#css-playground{
+		bottom: 0;
+	}
+
+	#css-playground img{
+		width: 80px;
+		height: 80px;
+		position: absolute;
+		bottom: 30px;
+		right: 30px;
+	}
+
+	#css-playground p{
+		position: absolute;
+		text-align: right;
+		bottom: 30px;
+		right: 148px;
+	}
+
+	#css-playground > .mask{
+		-webkit-transition: background-color 500ms ease;
+		-moz-transition: background-color 500ms ease;
+		-o-transition: background-color 500ms ease;
+		transition: background-color 500ms ease;
+	}
+
+	#css-playground > .mask:hover{
+		background-color: rgba(59, 154, 219, 0.1);
+		cursor: pointer;
+	}
+
+}
+
+/***************** Footer Styles *****************/
+footer{
+	position: absolute;
+    left: 0;
+    bottom: 0;
+    height: 3rem;
+    width: 100%;
+    -webkit-box-shadow: 0px 0px 8px 2px #000000;
+    -moz-box-shadow: 0px 0px 8px 2px #000000;
+    box-shadow: 0px 0px 8px 2px #000000;
+}
+
+ul{
+	text-align: center;
+	background-color: #111;
+
+}
+
+ul li{
+	display: inline;
+}
+
+ul li a{
+	color: #eee;
+	text-decoration: none;
+	font-size: 1.5rem;
+	line-height: 3rem;
+	margin: 0 0.8rem;
+
+	-webkit-transition: font-size 1s ease, line-height 1s ease;
+	-moz-transition: font-size 1s ease, line-height 1s ease;
+	-o-transition: font-size 1s ease, line-height 1s ease;
+	transition: font-size 1s ease, line-height 1s ease;
+}
+
+ul li a:hover{
+	font-size: 1.8rem;
+	line-height: 2.7rem;
+}
