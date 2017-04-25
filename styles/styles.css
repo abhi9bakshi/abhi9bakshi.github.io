@@ -46,281 +46,70 @@ table {
 /***************** Global Styles *****************/
 html *{
     font-family: 'Raleway', sans-serif;
+	box-sizing: border-box;
 }
 
 
-/***************** Header Styles *****************/
-header{
-	position: absolute;
-	top: 0;
+/***************** Featured Styles *****************/
+.featured{
+	position: relative;
+	height: 100vh;
 	width: 100%;
-	background-color: #111;
-	-webkit-box-shadow: 0px 0px 8px 2px #000000;
-    -moz-box-shadow: 0px 0px 8px 2px #000000;
-    box-shadow: 0px 0px 8px 2px #000000;
+	background: #222 url("../media/images/background.jpeg") no-repeat center center;
 }
 
-header h2{
-	margin: 0 auto;
-	width: 10rem;
-	text-align: center;
-	font-size: 1rem;
-	line-height: 2.5rem;
-	color: #eee;
-}
-
-header h2:hover{
-	color: #fff;
-	cursor: pointer;
-}
-
-/*********** Playground Section Styles ***********/
-
-/* Parent Playground */
-#playground{
-	z-index: -1;
+.overlay{
 	position: absolute;
-	top: 2.5rem;
-	background: #888 url("../media/images/playground.jpg") no-repeat center center;
-	background-size: auto auto;
-	width: 100%;
-	height: calc(100% - 5.5rem);
-}
-
-#playground > .mask{
-	z-index: 1;
 	background-color: rgba(0,0,0,0.7);
-	width: 100%;
+	width: 100%; 
 	height: 100%;
 }
 
-
-/* Child Playgrounds */
-@media(min-width: 50.001rem){
-	#js-playground, #css-playground{
-		position: absolute;
-		top: 0;
-		width: 50%;
-		height: 100%;
-		font-size: 4rem;
-		color: #eee;
-	}
-
-	#js-playground{
-		left: 0;
-		border-right: 2px solid #111;
-	}
-
-	#css-playground{
-		right: 0;
-	}	
-
-	#css-playground img{
-		width: 160px;
-		height: 160px;
-		position: absolute;
-		bottom: 30px;
-		right: 30px;
-	}
-
-	#css-playground p{
-		position: absolute;
-		text-align: right;
-		top: 30px;
-		right: 30px;
-	}
-
-	#js-playground img{
-		width: 160px;
-		height: 160px;
-		position: absolute;
-		top: 30px;
-		left: 30px;
-	}
-
-	#js-playground p{
-		position: absolute;
-		bottom: 30px;
-		left: 30px;
-	}
-}
-#js-playground > .mask,  #css-playground > .mask{
+.featured p#info{
+	position: absolute;
+	top: 30vw;
 	width: 100%;
-	height: 100%;
-	position: absolute;
-	top: 0;
-}
-
-/* Transitions */
-#js-playground img, #css-playground img{
-	-webkit-transition: width 500ms ease, height 500ms ease;
-	-moz-transition: width 500ms ease, height 500ms ease;
-	-o-transition: width 500ms ease, height 500ms ease;
-	transition: width 500ms ease, height 500ms ease;
-}
-
-/* Animations */
-.js-anim{
-	animation: js-anim 2s infinite;
-}
-
-.css-anim{
-	animation: css-anim 2s infinite;	
-}
-
-@keyframes js-anim {
-    0%   {top: 30px;}
-    50%  {top: 35px;}
-    100% {top: 30px;}
-}
-
-@keyframes css-anim {
-    0%   {bottom: 30px;}
-    50%  {bottom: 35px;}
-    100% {bottom: 30px;}
-}
-
-/* JS playground */
-#js-playground > .mask{
-	-webkit-transition: background-color 500ms ease;
-	-moz-transition: background-color 500ms ease;
-	-o-transition: background-color 500ms ease;
-	transition: background-color 500ms ease;
-}
-
-#js-playground > .mask:hover{
-	background-color: rgba(247, 223, 30, 0.1);
-	cursor: pointer;
-}
-
-/* CSS Playground*/
-#css-playground > .mask{
-	-webkit-transition: background-color 500ms ease;
-	-moz-transition: background-color 500ms ease;
-	-o-transition: background-color 500ms ease;
-	transition: background-color 500ms ease;
-}
-
-#css-playground > .mask:hover{
-	background-color: rgba(59, 154, 219, 0.1);
-	cursor: pointer;
-}
-
-
-
-@media(max-width: 50rem){
-	/* Child Playgrounds */
-	#js-playground, #css-playground{
-		position: absolute;
-		left: 0;
-		width: 100%;
-		height: 50%;
-		font-size: 2rem;
-		color: #eee;
-	}
-
-	/* JS playground */
-	#js-playground{
-		top: 0;
-		border-bottom: 2px solid #111;
-	}
-
-	#js-playground img{
-		width: 80px;
-		height: 80px;
-		position: absolute;
-		top: 30px;
-		left: 30px;
-	}
-
-	#js-playground p{
-		position: absolute;
-		top: 48px;
-		left: 150px;
-	}
-
-	#js-playground > .mask{
-		-webkit-transition: background-color 500ms ease;
-		-moz-transition: background-color 500ms ease;
-		-o-transition: background-color 500ms ease;
-		transition: background-color 500ms ease;
-	}
-
-	#js-playground > .mask:hover{
-		background-color: rgba(247, 223, 30, 0.1);
-		cursor: pointer;
-	}
-
-	/* CSS Playground*/
-	#css-playground{
-		bottom: 0;
-	}
-
-	#css-playground img{
-		width: 80px;
-		height: 80px;
-		position: absolute;
-		bottom: 30px;
-		right: 30px;
-	}
-
-	#css-playground p{
-		position: absolute;
-		text-align: right;
-		bottom: 30px;
-		right: 148px;
-	}
-
-	#css-playground > .mask{
-		-webkit-transition: background-color 500ms ease;
-		-moz-transition: background-color 500ms ease;
-		-o-transition: background-color 500ms ease;
-		transition: background-color 500ms ease;
-	}
-
-	#css-playground > .mask:hover{
-		background-color: rgba(59, 154, 219, 0.1);
-		cursor: pointer;
-	}
-
-}
-
-/***************** Footer Styles *****************/
-footer{
-	position: absolute;
-    left: 0;
-    bottom: 0;
-    height: 3rem;
-    width: 100%;
-    -webkit-box-shadow: 0px 0px 8px 2px #000000;
-    -moz-box-shadow: 0px 0px 8px 2px #000000;
-    box-shadow: 0px 0px 8px 2px #000000;
-}
-
-ul{
 	text-align: center;
-	background-color: #111;
-
+	color: white;
+	font-size: 1.8vw;
 }
 
-ul li{
-	display: inline;
+.featured h2{
+	position: absolute;
+	top: 24vw;
+	width: 100%;
+	text-align: center;
+}
+.featured #logo{
+	position: absolute;
+	width: 10vw;
+	height: 10vw;
+	background-color: hsl(52, 84%, 63%);
+	box-shadow: 0px 0px 0px 3px white;
+	left: 45vw;
+	top: 12vw;
+	animation: color-transition 60s linear infinite;
+}
+.featured #logo:hover{
+	cursor: pointer;
 }
 
-ul li a{
-	color: #eee;
-	text-decoration: none;
-	font-size: 1.5rem;
-	line-height: 3rem;
-	margin: 0 0.8rem;
-
-	-webkit-transition: font-size 1s ease, line-height 1s ease;
-	-moz-transition: font-size 1s ease, line-height 1s ease;
-	-o-transition: font-size 1s ease, line-height 1s ease;
-	transition: font-size 1s ease, line-height 1s ease;
+@keyframes color-transition{
+	from {filter: hue-rotate(0);}
+    to {filter: hue-rotate(360deg);}
 }
 
-ul li a:hover{
-	font-size: 1.8rem;
-	line-height: 2.7rem;
+.featured #logo p{
+	position: absolute;
+	font-size: 4.8vw;
+	bottom: 0;
+	right: 0.5vw;
+	font-family: Arial, Helvetica, sans-serif;
+	font-weight: bold;
+}
+
+.featured h2{
+	color: white;
+	font-size: 4vw;
+	text-align: center;
 }

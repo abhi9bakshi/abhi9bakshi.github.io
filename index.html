@@ -24,77 +24,14 @@
 </head>
 
 <body>
-<header>
-	<h2>Abhinav Bakshi</h2>
-</header>
-
-<section id="playground">
-	<div class="mask"></div>
-
-	<section id="js-playground">
-		<img src="media/images/js_logo.png" alt="JS Playground"> 
-		<p>JS<br/>Playground</p>
-		<div class="mask"></div>
-	</section>
-
-	<section id="css-playground">
-		<p>CSS<br/>Playground</p>
-		<img src="media/images/css_logo.png" alt="CSS Playground"> 
-		<div class="mask"></div>
-	</section>
-</section>
-
-<footer>
-	<ul>
-		<li>
-			<a href="https://www.linkedin.com/in/abhi9bakshi" class="social-links">
-			    <i class="fa fa-linkedin-square" aria-hidden="true"></i>
-			</a>
-		</li>
-		<li>
-			<a href="https://www.facebook.com/abhi9bakshi" class="social-links">
-			    <i class="fa fa-facebook-square" aria-hidden="true"></i>
-			</a>
-		</li>
-		<li>
-			<a href="https://twitter.com/abhi9bakshi" class="social-links">
-			    <i class="fa fa-twitter-square" aria-hidden="true"></i>
-			</a>
-		</li>
-	</ul>
-</footer>
+    <section class="featured">
+        <div class="overlay">
+        <div id="logo">
+            <p>CP</p>
+        </div>
+        <h2>Code Playground</h2>
+        <p id="info">What will you code today?</p>
+    </section>
+<script src="scripts/script.js"></script>
 </body>
-
-<script>
-	$(document).ready(function(){
-		$("#js-playground > .mask").on('click', function(){
-			location.href='http://www.abhi9bakshi.com/js-playground';
-		});
-
-		$("#css-playground > .mask").on('click', function(){
-			location.href='http://www.abhi9bakshi.com/css-playground';
-		});
-
-		
-		$("#js-playground > .mask").hover(
-			function(){
-				$("#js-playground > img").addClass("js-anim");
-			},
-			function(){
-				$("#js-playground > img").removeClass("js-anim");
-			}
-		);
-
-		$("#css-playground > .mask").hover(
-			function(){
-				$("#css-playground > img").addClass("css-anim");
-			},
-			function(){
-				$("#css-playground > img").removeClass("css-anim");
-			}
-		);
-
-
-	})
-</script>
 </html>
