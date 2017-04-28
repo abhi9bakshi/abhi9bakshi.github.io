@@ -45,71 +45,64 @@ table {
 
 /***************** Global Styles *****************/
 html *{
-    font-family: 'Raleway', sans-serif;
+    font-family: 'PT Sans', sans-serif;
 	box-sizing: border-box;
 }
 
 
-/***************** Featured Styles *****************/
-.featured{
-	position: relative;
+/***************** Common Styles ******************/
+
+
+
+/***************** Homepage Styles ****************/
+.homepage{
+	color: #105B63;
+	width: 100%;
 	height: 100vh;
-	width: 100%;
-	background: #222 url("../media/images/background.jpeg") no-repeat center center;
+	background-color: #fffad5;
+	/*background-image: linear-gradient(#002F2F, #046380, #002F2F);*/
 }
 
-.overlay{
+.homepage .container{
 	position: absolute;
-	background-color: rgba(0,0,0,0.7);
-	width: 100%; 
-	height: 100%;
+	min-width: 500px;
+	min-height: 300px;
+	left: calc(50% - 250px);
+	top: calc(50vh - 150px);
+	border: 1px solid red;
 }
 
-.featured p#info{
-	position: absolute;
-	top: 30vw;
-	width: 100%;
-	text-align: center;
-	color: white;
-	font-size: 1.8vw;
-}
-
-.featured h2{
-	position: absolute;
-	top: 24vw;
+.homepage h2{
+	font-family: 'Varela Round', sans-serif;
+	font-size: 3rem;
 	width: 100%;
 	text-align: center;
-}
-.featured #logo{
-	position: absolute;
-	width: 10vw;
-	height: 10vw;
-	background-color: hsl(52, 84%, 63%);
-	box-shadow: 0px 0px 0px 3px white;
-	left: 45vw;
-	top: 12vw;
-	animation: color-transition 60s linear infinite;
-}
-.featured #logo:hover{
-	cursor: pointer;
+	margin-top: 5rem;
 }
 
-@keyframes color-transition{
-	from {filter: hue-rotate(0);}
-    to {filter: hue-rotate(360deg);}
-}
-
-.featured #logo p{
-	position: absolute;
-	font-size: 4.8vw;
-	bottom: 0;
-	right: 0.5vw;
-	font-family: Arial, Helvetica, sans-serif;
-	font-weight: bold;
-}
-
-.featured h2{
-	color: white;
-	font-size: 4vw;
+.homepage #btn_container{
+	margin: 2rem 0 0 0;
+	width: 100%;
 	text-align: center;
+}
+
+.homepage button{
+	box-sizing: border-box;
+	font-size: 1rem;
+	border: none;
+	padding: 1rem 2rem;
+	border-radius: 5px;
+	box-shadow:inset 0 0 0 0 #014954;
+	transition: box-shadow 300ms ease-out;
+	color: #fffad5;
+	background-color: #105B63;
+}
+
+.homepage button:hover{
+	transition: box-shadow 300ms ease-in;
+	box-shadow:inset 0 0 5px 2rem #014954;
+}
+
+.homepage button:first-child{
+	margin-right: 2rem;
 }
