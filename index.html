@@ -1,40 +1,329 @@
 <!doctype html>
 <html lang="en">
-
 <head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-<title>Abhinav Bakshi</title>
-
-<!-- Custom Font -->
-<link href="https://fonts.googleapis.com/css?family=PT+Sans|Varela+Round" rel="stylesheet"> 
-
-<!-- jQuery -->
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.0/jquery.min.js" integrity="sha256-JAW99MJVpJBGcbzEuXk4Az05s/XyDdBomFqNlM3ic+I=" crossorigin="anonymous"></script>
-
-<!-- Modernizr -->
-<script src="https://cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.3/modernizr.min.js" integrity="sha256-0rguYS0qgS6L4qVzANq4kjxPLtvnp5nn2nB5G1lWRv4=" crossorigin="anonymous"></script>
-
-<!-- Font Awesome -->
-<link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
-
-<!-- Custom Styles -->
-<link rel="stylesheet" href="styles/styles.css">
+	<meta charset = "utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta name="code-playground" content="Code Playground"
+		data-theme="material"
+		data-view="side-by-side"
+		data-active="css"
+		data-livecode="on"
+		data-delay="500"
+	/>
+	<link rel='stylesheet' href='https://fonts.googleapis.com/css?family=Doppio+One'>
+<script src='https://code.jquery.com/jquery-3.2.1.min.js'></script>
 </head>
-
 <body>
-    <section class="homepage">
-        <div class="container">
-            <h2>Abhinav Bakshi</h2>
-            <div id="btn_container">
-                <button id="btn_projects">Projects</button>
-                <button id="btn_about">About Me</button>
-            </div>
-        </div>
-    </section>
+<div id="bg">
+  <h2>
+    Abhinav Bakshi
+  </h2>
 
-<!-- Custom Scripts -->
-<script src="scripts/script.js"></script>
+  <div class="button" id="about">
+    <p>About</p>
+    <i class="fa fa-user" aria-hidden="true"></i>
+  </div>
+  <div class="button" id="portfolio">
+    <p>Portfolio</p>
+    <i class="fa fa-picture-o" aria-hidden="true"></i>
+  </div>  
+  <div class="button" id="lab">
+    <p>Lab</p>
+    <i class="fa fa-flask" aria-hidden="true"></i>
+  </div>  
+</div>
+
 </body>
+
+<style>
+/* CSS Reset */
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+body {
+	line-height: 1;
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
+
+/* Page styling rules */
+body{
+  background-color: #073642;
+  color: white;
+}
+
+#bg{
+  position: fixed;
+  top: 0%;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+h2{
+  position: absolute;
+  width: 400px;
+  text-align: center;
+  font-size: 3rem;
+  left: calc(50% - 200px);
+  top: calc(50% - 2.9rem);
+  font-family: 'Doppio One', sans-serif;
+}
+h2:before {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 3px;
+  bottom: -1rem;
+  left: 0;
+  background: white;
+  border-radius: 5px;
+}
+
+.button{
+  font-family: 'Doppio One', sans-serif;
+  width: 100px;
+  position: absolute;
+  text-align: center;
+}
+.button:before {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 3px;
+  bottom: -1rem;
+  left: 0;
+  background: white;
+  visibility: hidden;
+  border-radius: 5px;
+  transform: scaleX(0);
+  transition: .25s linear;
+}
+.button:hover{
+  cursor: pointer;
+}
+.button:hover:before, .button:focus:before {
+  visibility: visible;
+  transform: scaleX(1);
+  cursor: pointer;
+}
+
+#about{
+  top: calc(50% + 1.9rem);
+  left: calc(50% - 200px);
+}
+
+#portfolio{
+  top: calc(50% + 1.9rem);
+  left: calc(50% - 50px);
+}
+
+#lab{
+  top: calc(50% + 1.9rem);
+  right: calc(50% - 202px);
+}
+
+@media( max-width: 600px){
+  h2{
+    font-family: 'Doppio One', sans-serif;
+    position: absolute;
+    width: 300px;
+    text-align: center;
+    font-size: 2rem;
+    left: calc(50% - 150px);
+    top: calc(50% - 7.2rem);
+  }
+  
+  .button{
+    font-family: 'Doppio One', sans-serif;
+    width: 200px;
+    font-size: 1.3rem;
+    position: absolute;
+    text-align: center;
+  }
+
+  .button:before {
+	height: 2px;
+  }
+  
+  #about{
+    top: calc(50% - 2.2rem);
+    left: calc(50% - 100px);
+  }
+
+  #portfolio{
+    top: calc(50% + 1.8rem);
+    left: calc(50% - 100px);
+  }
+
+  #lab{
+    top: calc(50% + 5.8rem);
+    left: calc(50% - 100px);
+  }
+}
+</style>
+<script>
+/* Polygon Rules */
+var refreshDuration = 10000;
+var refreshTimeout;
+var numPointsX;
+var numPointsY;
+var unitWidth;
+var unitHeight;
+var points;
+
+function onLoad()
+{
+    var svg = document.createElementNS('http://www.w3.org/2000/svg', 'svg');
+    svg.setAttribute('width',window.innerWidth);
+    svg.setAttribute('height',window.innerHeight);
+//    svg.setAttribute('width',$('#bg')[0].innerWidth);
+//    svg.setAttribute('height',$('#bg')[0].innerHeight);
+    document.querySelector('#bg').appendChild(svg);
+
+    var unitSize = (window.innerWidth+window.innerHeight)/10;
+    numPointsX = Math.ceil(window.innerWidth/unitSize)+1;
+    numPointsY = Math.ceil(window.innerHeight/unitSize)+1;
+    unitWidth = Math.ceil(window.innerWidth/(numPointsX-1));
+    unitHeight = Math.ceil(window.innerHeight/(numPointsY-1));
+
+    points = [];
+
+    for(var y = 0; y < numPointsY; y++) {
+        for(var x = 0; x < numPointsX; x++) {
+            points.push({x:unitWidth*x, y:unitHeight*y, originX:unitWidth*x, originY:unitHeight*y});
+        }
+    }
+
+    randomize();
+
+    for(var i = 0; i < points.length; i++) {
+        if(points[i].originX != unitWidth*(numPointsX-1) && points[i].originY != unitHeight*(numPointsY-1)) {
+            var topLeftX = points[i].x;
+            var topLeftY = points[i].y;
+            var topRightX = points[i+1].x;
+            var topRightY = points[i+1].y;
+            var bottomLeftX = points[i+numPointsX].x;
+            var bottomLeftY = points[i+numPointsX].y;
+            var bottomRightX = points[i+numPointsX+1].x;
+            var bottomRightY = points[i+numPointsX+1].y;
+
+            var rando = Math.floor(Math.random()*2);
+
+            for(var n = 0; n < 2; n++) {
+                var polygon = document.createElementNS(svg.namespaceURI, 'polygon');
+
+                if(rando==0) {
+                    if(n==0) {
+                        polygon.point1 = i;
+                        polygon.point2 = i+numPointsX;
+                        polygon.point3 = i+numPointsX+1;
+                        polygon.setAttribute('points',topLeftX+','+topLeftY+' '+bottomLeftX+','+bottomLeftY+' '+bottomRightX+','+bottomRightY);
+                    } else if(n==1) {
+                        polygon.point1 = i;
+                        polygon.point2 = i+1;
+                        polygon.point3 = i+numPointsX+1;
+                        polygon.setAttribute('points',topLeftX+','+topLeftY+' '+topRightX+','+topRightY+' '+bottomRightX+','+bottomRightY);
+                    }
+                } else if(rando==1) {
+                    if(n==0) {
+                        polygon.point1 = i;
+                        polygon.point2 = i+numPointsX;
+                        polygon.point3 = i+1;
+                        polygon.setAttribute('points',topLeftX+','+topLeftY+' '+bottomLeftX+','+bottomLeftY+' '+topRightX+','+topRightY);
+                    } else if(n==1) {
+                        polygon.point1 = i+numPointsX;
+                        polygon.point2 = i+1;
+                        polygon.point3 = i+numPointsX+1;
+                        polygon.setAttribute('points',bottomLeftX+','+bottomLeftY+' '+topRightX+','+topRightY+' '+bottomRightX+','+bottomRightY);
+                    }
+                }
+                polygon.setAttribute('fill','rgba(0,0,0,'+(Math.random()/3)+')');
+                var animate = document.createElementNS('http://www.w3.org/2000/svg','animate');
+                animate.setAttribute('fill','freeze');
+                animate.setAttribute('attributeName','points');
+                animate.setAttribute('dur',refreshDuration+'ms');
+                animate.setAttribute('calcMode','linear');
+                polygon.appendChild(animate);
+                svg.appendChild(polygon);
+            }
+        }
+    }
+
+    refresh();
+
+}
+
+function randomize() {
+    for(var i = 0; i < points.length; i++) {
+        if(points[i].originX != 0 && points[i].originX != unitWidth*(numPointsX-1)) {
+            points[i].x = points[i].originX + Math.random()*unitWidth-unitWidth/2;
+        }
+        if(points[i].originY != 0 && points[i].originY != unitHeight*(numPointsY-1)) {
+            points[i].y = points[i].originY + Math.random()*unitHeight-unitHeight/2;
+        }
+    }
+}
+
+function refresh() {
+    randomize();
+    for(var i = 0; i < document.querySelector('#bg svg').childNodes.length; i++) {
+        var polygon = document.querySelector('#bg svg').childNodes[i];
+        var animate = polygon.childNodes[0];
+        if(animate.getAttribute('to')) {
+            animate.setAttribute('from',animate.getAttribute('to'));
+        }
+        animate.setAttribute('to',points[polygon.point1].x+','+points[polygon.point1].y+' '+points[polygon.point2].x+','+points[polygon.point2].y+' '+points[polygon.point3].x+','+points[polygon.point3].y);
+        animate.beginElement();
+    }
+    refreshTimeout = setTimeout(function() {refresh();}, refreshDuration);
+}
+
+function onResize() {
+    document.querySelector('#bg svg').remove();
+    clearTimeout(refreshTimeout);
+    onLoad();
+}
+
+window.onload = onLoad;
+window.onresize = onResize;
+/* Polygon Rules End */
+
+</script>
 </html>
